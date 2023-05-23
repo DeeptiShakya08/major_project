@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head xmlns:th="http://www.thymeleaf.org"> 
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Kaushan+Script&family=Source+Sans+Pro:wght@200;400&family=Source+Serif+Pro:wght@300&display=swap" rel="stylesheet">
+    <title>Orphanage Management System</title>
+    <style>
+        .nav-item{
+      font-family: 'Kaushan Script', cursive;
+      font-size: 20px;
+
+    }
+        /* *{
+        margin: 0;
+        padding: 0;
+    } */
+    .bg{
+        min-height: 100vh;
+        width: 100%;
+        background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("images/threehands.jpg");
+        background-position: center;
+        background-size:cover;
+        position:relative;
+    }
+    .text{
+        width:90%;
+        color:#f44336;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform:translate(-50% ,-50%);
+    }
+    .text h4{
+        font-size: 30px;
+        text-align: center;
+        font-family: 'Kaushan Script';
+        font-family: 'Alice', serif;
+        color:#fff;
+
+    }
+    .text h1{
+        font-size: 110px;
+        text-align: center;
+        font-family: 'Kaushan Script', cursive;
+        color:#f44336;
+        font-weight: 800px;
+    }
+    .hero-btn{
+        display:inline-block;
+        text-decoration: none;
+        color:#fff;
+        border: 1px solid #fff;
+        padding:12px 34px;
+        /* font-size: 13px; */
+        background:transparent;
+        position: relative;
+        cursor:pointer;
+        align-items: center;
+        margin-top: 0px;
+
+
+    }
+    .hero-btn:hover{
+        border: 1px solid #f44336;
+        background:#f44336;
+        transition:1s;
+        color:#fff;
+        position:relative;
+
+    }
+    .friend{
+        margin: auto;
+        width:80%;
+        padding-top: 50px;
+        text-align: center;
+        color:black;
+        font-size: 70px;
+        font-family: 'Kaushan Script', cursive;
+
+    }
+ .highlight{
+        margin: auto;
+        width:80%;
+        padding-top: 50px;
+        text-align: center;
+        color:#f44336;
+        font-size: 70px;
+        font-family: 'Kaushan Script', cursive;
+}
+.row{
+    margin-top: 5%;
+    margin-bottom:30px;
+    margin-left:5%;
+    justify-content: space-between;
+    display:flex;
+
+}
+.para{
+  color: #000000; /* Replace with desired color */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 5px;
+  padding: 10px;
+
+}
+.para1{
+    background-color: rgb(248, 243, 243);
+    font-size: 30px;
+    
+font-family: 'Source Sans Pro', sans-serif;
+/* font-family: 'Source Serif Pro', serif; */
+    color:#f44336;
+    /* font-weight: normal; */
+    margin-top: 5px;
+    margin-left:10px ;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    box-shadow:rgb(224, 222, 222);
+}
+.p{
+    font-size: 20px;
+    color:#000000;
+    font: weight 200px;;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top: 20px;
+
+}
+.h1{
+    font-size: 110px;
+        text-align: center;
+        font-family: 'Kaushan Script', cursive;
+        color:black;
+        font-weight: 800px;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Adjust this value based on your layout */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container1 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.forever{
+    font-size: 50px;
+        text-align: center;
+        font-family: 'Kaushan Script', cursive;
+        color:#f44336;
+        font-weight: 400px;
+        margin: auto;
+        padding-top: 15px;
+}
+/* .friend {
+  position: relative;
+}
+
+.friend::before,
+.friend::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background-color: black;
+}
+
+.friend::before {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.friend::after {
+  right: 0;
+  transform: translate(100%, -50%);
+} */
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color:purple;">
+            <a class="navbar-brand" href="#">
+                <h2 style="color:white"><img src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded"
+                        height="60px">
+                    Children's Home</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+                            Home </a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            View children </a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            View Response </a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            Adopt child </a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            Logout </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end of navbar-->
+
+    <section class="bg">
+        <div class="text">
+            <h4>Give them <h4>
+            <h1>HOPE</h1> 
+            <h4>when no one else cares</h4>
+            <a href=""class="hero-btn">ADOPT A CHILD</a>
+        </div>
+    </section>
+    <div class="friend">
+        <h1>
+            Together <span class="highlight">we do make </span> a differnce
+          </h1>
+    </div>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-6 ">
+                <p class="para">Every child deserves the chance to live a life full of happiness, growth, and achievement. Adoption offers an opportunity to break the cycle of hardship and provide a child with the tools necessary to overcome challenges and reach their fullest potential. It is a chance to provide a sense of belonging, identity, and a strong support system that will guide them through life's journey.</p><br>
+                <p class="para">Moreover, adoption is not solely about giving a child a chance to live; it is also about the adoptive parents' own journey of growth and fulfillment. It allows them to experience the joy of parenthood, to witness the growth and development of a child they have nurtured and loved as their own. It is a mutual exchange of love, care, and companionship that enriches the lives of all those involved.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/parents with child.jpg" height="400px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="para1">
+            <p>"Every child deserves the opportunity to thrive, to grow up in a nurturing environment, and to have access to the tools they need to succeed. Adoption grants us the privilege to provide exactly that—a better future filled with endless possibilities."
+
+            </p>
+        </div>
+    </div>
+    <div class="container1">
+        <img src="/images/v child.jpg" alt="childv">
+    </div>
+
+    <div class="forever">
+        <h1 class="forever">"Find Your Forever Friend: Adopt a Loving Companion Today!"</h1>
+        <p class="p">
+            In a world where countless children yearn for a loving family, choosing to adopt is an act of profound kindness. <br>It is an affirmation that every child deserves a chance to live a life brimming with love, happiwness, and endless possibilities.<br> By embracing adoption, we can make a lasting impact, fostering a society where the potential of every child is recognized, celebrated, and fulfilled.
+        </p>
+    </div>
+          
+
+    
+
+
+        <div id="wrapper">
+            <footer class="text-center text-white mt-3" id="Footer" style="background-color:purple;">
+                <!-- Grid container -->
+                <div class="container p-4">
+
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/bilal.saifi.180" role="button"><i
+                                class="bi bi-facebook"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="bi bi-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="bilalsaifi24977@gmail.com"
+                            role="button"><i class="bi bi-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com/saifi4085"
+                            role="button"><i class="bi bi-instagram"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.linkedin.com/in/bilal-saifi-a4365a252" role="button"><i
+                                class="bi bi-linkedin"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="bi bi-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" class="form-control" />
+                                        <label class="form-label" for="form5Example21">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                </div>
+
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+        </div>
+    </div>
+    <!-- Copyright -->
+    </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
