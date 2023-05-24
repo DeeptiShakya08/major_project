@@ -41,11 +41,15 @@ public class OrphanAgeController {
 		return "ContactUs";
 	 }
 		
-    @RequestMapping("/Event")
+    @RequestMapping("/Events")
     public String event() {
-    	return "Event";
+    	return "Events";
    
 	}
+    @RequestMapping("/login")
+    public String loginform(){
+    	return "login";
+    }
 	
 }
 
