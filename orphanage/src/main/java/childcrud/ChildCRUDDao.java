@@ -24,13 +24,25 @@ public class ChildCRUDDao {
 			pdsm = con.prepareStatement(QueryUtil.ADD_CHILD_QUERY);
 			pdsm.setString(cnt++, child.getName());
 			pdsm.setDate(cnt++, child.getDob());
+			
 			pdsm.setString(cnt++, child.getHairColour());
 			pdsm.setString(cnt++, child.getGender());
 			pdsm.setString(cnt++, childId);
 			pdsm.setString(cnt++, null);
 			pdsm.setDate(cnt++, doj);
+			pdsm.setBoolean(cnt++,false);
+			
+			
 			pdsm.execute();
 			System.out.println("child added in db succesfully");
+			/* name         | varchar(20) | YES  |     | NULL    |       |
+| dob          | date        | YES  |     | NULL    |       |
+| hair_colour  | varchar(10) | YES  |     | NULL    |       |
+| gender       | varchar(10) | YES  |     | NULL    |       |
+| child_pid    | varchar(10) | YES  |     | NULL    |       |
+| image_url    | varchar(50) | YES  |     | NULL    |       |
+| doj          | date        | YES  |     | NULL    |       |
+| adoption_req*/
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -54,7 +66,7 @@ public class ChildCRUDDao {
 				child.setDob(rs.getDate("dob"));
 				child.setDoj(rs.getDate("doj"));
 				child.setAdaptionRequest(false);
-				child.setAdaptorMail(rs.getString("adaptor_mail"));
+//				child.setAdaptorMail(rs.getString("adaptor_mail"));
 				child.setHairColour(rs.getString("hair_colour"));
 				child.setGender(rs.getString("gender"));
 				child.setChildId(rs.getString("child_pid"));

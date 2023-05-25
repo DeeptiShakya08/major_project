@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head xmlns:th = "http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login form</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -21,15 +20,24 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>login form</title>
+    <style>.nav-item {
+        font-family:'Kaushan Script',cursive;
+        font-size: 20px;
+
+    }</style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color:purple;">
             <a class="navbar-brand" href="#">
-                <h2 style="color:white"><img src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded"
+                <h2 style="color:white; font-family:'Kaushan Script',cursive;"><img src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded"
                         height="60px">
-                    The Children's Home</h2>
+                    Children's Home</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -48,11 +56,11 @@
                     <li class="nav-item ms-5">
                         <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
                             style="color:white">
-                            Donor </a>
+                            Donation </a>
                     </li>
                     <li class="nav-item ms-5">
                         <a class="nav-link " href="/Fly high/Register.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">Adoptation </a>
+                            style="color:white">Adoption </a>
                     </li>
                     <li class="nav-item ms-5">
                         <a class="nav-link " href="/Fly high/login.html" tabindex="-1" aria-disabled="true"

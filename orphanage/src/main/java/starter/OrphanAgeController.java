@@ -104,5 +104,11 @@ public class OrphanAgeController {
 	public String deleteForm() {
 		return "DeleteChild";
 	}
+	
+	@RequestMapping("/registration")
+	public String registration() {
+		return "RegistrationForm";
+	}
+
 
 }
