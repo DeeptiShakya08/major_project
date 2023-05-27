@@ -24,25 +24,17 @@ public class ChildCRUDDao {
 			pdsm = con.prepareStatement(QueryUtil.ADD_CHILD_QUERY);
 			pdsm.setString(cnt++, child.getName());
 			pdsm.setDate(cnt++, child.getDob());
-			
+
 			pdsm.setString(cnt++, child.getHairColour());
 			pdsm.setString(cnt++, child.getGender());
 			pdsm.setString(cnt++, childId);
 			pdsm.setString(cnt++, null);
 			pdsm.setDate(cnt++, doj);
-			pdsm.setBoolean(cnt++,false);
-			
-			
+			pdsm.setBoolean(cnt++, false);
+
 			pdsm.execute();
 			System.out.println("child added in db succesfully");
-			/* name         | varchar(20) | YES  |     | NULL    |       |
-| dob          | date        | YES  |     | NULL    |       |
-| hair_colour  | varchar(10) | YES  |     | NULL    |       |
-| gender       | varchar(10) | YES  |     | NULL    |       |
-| child_pid    | varchar(10) | YES  |     | NULL    |       |
-| image_url    | varchar(50) | YES  |     | NULL    |       |
-| doj          | date        | YES  |     | NULL    |       |
-| adoption_req*/
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -55,7 +47,7 @@ public class ChildCRUDDao {
 		Connection con = DBConnection.createConnection();
 		PreparedStatement pdsm = null;
 		ResultSet rs = null;
-//		  ,child_pid ,image_url,
+
 		try {
 			pdsm = con.prepareStatement(QueryUtil.GET_CHILDS_QUERY);
 			rs = pdsm.executeQuery();
@@ -95,5 +87,70 @@ public class ChildCRUDDao {
 			e.printStackTrace();
 		}
 
+	}
+
+	public static List<ViewChildBean> getAddptedChild() {
+		List<ViewChildBean> childs = new ArrayList<ViewChildBean>();
+		Connection con = DBConnection.createConnection();
+		PreparedStatement pdsm = null;
+		ResultSet rs = null;
+//		  ,child_pid ,image_url,
+		try {
+			pdsm = con.prepareStatement(QueryUtil.GET_ADOPTED_CHILDS_QUERY);
+			rs = pdsm.executeQuery();
+			while (rs.next()) {
+				ViewChildBean child = new ViewChildBean();
+				child.setName(rs.getString("name"));
+				System.out.println("name  = " + rs.getString("name"));
+				child.setDob(rs.getDate("dob"));
+				child.setDoj(rs.getDate("doj"));
+				child.setAdaptionRequest(false);
+				child.setAdaptorMail(rs.getString("adaptor_mail"));
+				child.setHairColour(rs.getString("hair_colour"));
+				child.setGender(rs.getString("gender"));
+				child.setChildId(rs.getString("child_pid"));
+				System.out.println("childId = " + rs.getString("child_pid"));
+				child.setImageUrl(null);
+				childs.add(child);
+				System.out.println("child displayed-==========>>>>");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			CloseResources.close(con, rs, pdsm);
+		}
+		return childs;
+	}
+
+	public static List<ViewChildBean> getChildForAdaption() {
+		List<ViewChildBean> childs = new ArrayList<ViewChildBean>();
+		Connection con = DBConnection.createConnection();
+		PreparedStatement pdsm = null;
+		ResultSet rs = null;
+		try {
+			pdsm = con.prepareStatement(QueryUtil.GET_CHILDS_FOR_ADOPTION_QUERY);
+			rs = pdsm.executeQuery();
+			while (rs.next()) {
+				ViewChildBean child = new ViewChildBean();
+				child.setName(rs.getString("name"));
+				System.out.println("name  = " + rs.getString("name"));
+				child.setDob(rs.getDate("dob"));
+				child.setDoj(rs.getDate("doj"));
+				child.setAdaptionRequest(false);
+				child.setHairColour(rs.getString("hair_colour"));
+				child.setGender(rs.getString("gender"));
+				child.setChildId(rs.getString("child_pid"));
+				System.out.println("childId = " + rs.getString("child_pid"));
+				child.setImageUrl(null);
+				childs.add(child);
+				System.out.println("child displayed for adoption-==========>>>>");
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			CloseResources.close(con, rs, pdsm);
+		}
+		return childs;
 	}
 }

@@ -26,35 +26,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <title>Orphanage Management System</title>
     <style>
-         .nav-item {
-            font-family:'Kaushan Script',cursive;
+        .nav-item {
+            font-family: 'Kaushan Script', cursive;
             font-size: 20px;
 
         }
-        .bg{
-        min-height: 100vh;
-        width: 100%;
-        background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("images/v child.jpg");
-        background-position: center;
-        background-size:cover;
-        position:relative;
-    }
-    .text{
-        width:90%;
-        color:#f44336;
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform:translate(-50% ,-50%);
-    }
-    
-    .text h1{
-        font-size: 50px;
-        text-align: center;
-        font-family: 'Kaushan Script', cursive;
-        color:#f44336;
-        font-weight: 500px;
-    }
+
+        .bg {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("images/v child.jpg");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .text {
+            width: 90%;
+            color: #f44336;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text h1 {
+            font-size: 50px;
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+            color: #f44336;
+            font-weight: 500px;
+        }
     </style>
 </head>
 
@@ -62,8 +64,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color:purple;">
             <a class="navbar-brand" href="#">
-                <h3 style="color:white;font-family:'Kaushan Script',cursive;"><img src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded"
-                        height="60px">
+                <h3 style="color:white;font-family:'Kaushan Script',cursive;"><img
+                        src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
                     Children's Home</h3>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -83,11 +85,6 @@
                             Add Child Details </a>
                     </li>
                     <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Update Child Details </a>
-                    </li>
-                    <li class="nav-item ms-5">
                         <a class="nav-link  " th:href="@{DeleteForm}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             Delete Child Details </a>
@@ -98,7 +95,7 @@
                             View Children </a>
                     </li>
                     <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                        <a class="nav-link  " th:href="@{ViewRequest}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             View Request </a>
                     </li>
@@ -108,7 +105,7 @@
                             View volunteer </a>
                     </li>
                     <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                        <a class="nav-link  " th:href="@{EventForm}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             Add Event </a>
                     </li>
@@ -119,23 +116,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" th:href="@{AdminLogin}">View Event Details</a></li>
-                            <li><a class="dropdown-item" th:href="@{EmployeeLogin}">View Atopted childs</a></li>
-                            <li><a class="dropdown-item" th:href="@{CustomerLogin}">View Adopters Details</a></li>
-                            <li><a class="dropdown-item" th:href="@{CustomerLogin}">View Donor Details</a></li>
+                            <li><a class="dropdown-item" th:href="@{GetAdoptedChild}">View Atopted childs</a></li>
+                            <li><a class="dropdown-item" th:href="@{GetAdoptors}">View Adopters Details</a></li>
+                            <li><a class="dropdown-item" th:href="@{GetDonors}">View Donor Details</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link " href="/Fly high/Register.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">Adoption </a>
-                    </li>
- 
                     <li>
                         <div class="ms-5">
                             <h2 th:text="${name}" style="color:white;"></h2>
                         </div>
                     </li>
-
-
                 </ul>
                 <!-- <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -236,103 +226,104 @@
 
 
 
-    <section class="bg">
-        <div class="text">
-            <h1>We provide quality child care,education and family strenthening services <h1>
-            <!-- <h1>HOPE</h1> 
+        <section class="bg">
+            <div class="text">
+                <h1>We provide quality child care,education and family strenthening services <h1>
+                        <!-- <h1>HOPE</h1> 
             <h4>when no one else cares</h4> -->
-            <!-- <a href=""class="hero-btn">ADOPT A CHILD</a> -->
-        </div>
-    </section>
-
-
-
-    
-
-
-
-    <!-- start of footer -->
-    <div id="wrapper">
-        <footer class="text-center text-white mt-3" id="Footer" style="background-color:purple;">
-            <!-- Grid container -->
-            <div class="container p-4">
-
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/bilal.saifi.180"
-                        role="button"><i class="bi bi-facebook"></i></a>
-
-                    <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                            class="bi bi-twitter"></i></a>
-
-                    <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="bilalsaifi24977@gmail.com" role="button"><i
-                            class="bi bi-google"></i></a>
-
-                    <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com/saifi4085"
-                        role="button"><i class="bi bi-instagram"></i></a>
-
-                    <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating m-1"
-                        href="https://www.linkedin.com/in/bilal-saifi-a4365a252" role="button"><i
-                            class="bi bi-linkedin"></i></a>
-
-                    <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                            class="bi bi-github"></i></a>
-                </section>
-                <!-- Section: Social media -->
-                <!-- Section: Form -->
-                <section class="">
-                    <form action="">
-                        <!--Grid row-->
-                        <div class="row d-flex justify-content-center">
-                            <!--Grid column-->
-                            <div class="col-auto">
-                                <p class="pt-2">
-                                    <strong>Sign up for our newsletter</strong>
-                                </p>
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-md-5 col-12">
-                                <!-- Email input -->
-                                <div class="form-outline form-white mb-4">
-                                    <input type="email" id="form5Example21" class="form-control" />
-                                    <label class="form-label" for="form5Example21">Email address</label>
-                                </div>
-                            </div>
-                            <!--Grid column-->
-                            <!--Grid column-->
-                            <div class="col-auto">
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-outline-light mb-4">
-                                    Subscribe
-                                </button>
-                            </div>
-                            <!--Grid column-->
-                        </div>
-                        <!--Grid row-->
-                    </form>
-                </section>
-                <!-- Section: Form -->
-                <!-- Section: Text -->
-                <section class="mb-4">
-                    <p>
-                        Sehat Era pharmacy is a physically exists medicine shop
-                    </p>
-                </section>
-                <!-- Section: Text -->
+                        <!-- <a href=""class="hero-btn">ADOPT A CHILD</a> -->
             </div>
+        </section>
 
-            <!-- Grid container -->
 
-            <!-- Copyright -->
-    </div>
+
+
+
+
+
+        <!-- start of footer -->
+        <div id="wrapper">
+            <footer class="text-center text-white mt-3" id="Footer" style="background-color:purple;">
+                <!-- Grid container -->
+                <div class="container p-4">
+
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/bilal.saifi.180" role="button"><i
+                                class="bi bi-facebook"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="bi bi-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="bilalsaifi24977@gmail.com"
+                            role="button"><i class="bi bi-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com/saifi4085"
+                            role="button"><i class="bi bi-instagram"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.linkedin.com/in/bilal-saifi-a4365a252" role="button"><i
+                                class="bi bi-linkedin"></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                                class="bi bi-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example21" class="form-control" />
+                                        <label class="form-label" for="form5Example21">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                    <!-- Section: Text -->
+                    <section class="mb-4">
+                        <p>
+                            Sehat Era pharmacy is a physically exists medicine shop
+                        </p>
+                    </section>
+                    <!-- Section: Text -->
+                </div>
+
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+        </div>
     </div>
     <!-- Copyright -->
     </footer>

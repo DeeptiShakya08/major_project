@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>Orphanage Management System</title>
+    <style>
+        .nav-item {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 20px;
+
+        }
+
+
+
+        .secHeading {
+            font-size: 60px;
+            padding: 0 10rem;
+            text-align: center;
+            /* text-decoration: none; */
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0px;
+            display: block;
+            font-family: 'Kaushan Script', cursive;
+
+            line-height: 1.4;
+            color: #4d656c;
+        }
+
+        /* .text {
+          font: size 10px;
+          
+          font-weight: 200;
+           font-style: normal; 
+          letter-spacing: 0em;
+          text-transform: none;
+        }
+        .container text{
+          font: size 10px;
+          
+          font-weight: 300;
+          font-style: normal;
+          letter-spacing: 0em;
+          text-transform: none; */
+        /* }  */
+        .h2 {
+            text-decoration: none;
+            color: purple;
+            font-size: 2.5rem;
+            font-weight: 400;
+
+            font-display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color:purple;">
+            <a class="navbar-brand" href="#">
+                <h2 style="color:white"><img src="/images/logo.png" width="150px" alt="" class="rounded" height="60px">
+                    Children's Home</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item ms-5">
+                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
+                            Home </a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " th:href="@{GetEvents}" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            View Events</a>
+                    </li>
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            Register and tickets </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end of navbar-->
+    <div class="container" th:each = "event : ${events}">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <img class="rounded-circle" th:src="${event.url}" alt="" width="500px" height="500px">
+            </div>
+            <div class="col-md-6">
+                <h1 th:text = "${event.eventName}" style="color: purple;"></h1>
+                <h2 th:text ="${event.desc}"></h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente fugit beatae esse a voluptas quia cum expedita odit vero ducimus ea ex, illum non quisquam totam. Ex quod reprehenderit dolor adipisci dolorum nam maiores, molestias odit modi qui et accusamus reiciendis error, officiis magnam. Nam fuga, neque laboriosam perferendis quaerat, deserunt officia amet excepturi quibusdam doloribus, quae totam veritatis rerum!</p>
+                <p>Event Date</p>
+                <p th:text = "${event.eventDate}"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+<!-- <div class="continer">
+        <div class="row mt-5" th:each="event : ${events}">
+            <div class="col-md-6 ms-5" >
+                <img th:src="${event.url}" alt="photo of event" height="500px" width="700px">
+            </div>
+            <div class="col-md-6 ms-5">
+                <h1 th:text="${event.eventName}"></h1>
+                <h2 th:text="${event.desc}"></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in sunt, necessitatibus qui
+                    beatae temporibus a totam tempore nobis atque voluptates nisi quas earum facilis ipsum unde esse
+                    aliquid officiis ducimus reiciendis facere placeat asperiores dolor. Possimus iste asperiores
+                    blanditiis similique, debitis fugiat. Dolorum quae placeat reiciendis accusamus. Ea, quos!</p>
+                <p>Event Date</p>
+                <p th:text="${event.eventDate}"></p>
+            </div>
+
+        </div>
+    </div> -->
+
+</body>
+
+</html>

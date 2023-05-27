@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Orphanage Management System</title>
+</head>
+
+<body>
+    <style>
+        #Footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+    <nav class=" navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid " style="background-color:purple;">
+            <a class="navbar-brand" href="#">
+                <h2 style="color:white;font-family: 'Kaushan Script', cursive" ;><img
+                        src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
+                    Children's Home</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item ms-5 ">
+                        <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+                            Home </a>
+                    </li>
+                    <li class="nav-item ms-5 ">
+                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
+                    </li>
+
+                    <li class="nav-item ms-5 ">
+                        <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
+                            style="color:white">
+                            Contact us
+                        </a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success" type="submit">Search</button>
+    </form> -->
+            </div>
+        </div>
+    </nav>
+    <!-- your code goes here -->
+    <!-- <div class="container">
+            <div class="row">
+                <div class="col-md-6" th:each="event : ${events}">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-8">
+                                <img th:src="${event.url}" class="card-img" alt="Image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${event.eventName}"></h5>
+                                    <p class="card-text" th:text="${event.desc}"></p>
+                                    <p class="card-text"><small class="text-muted" th:text="${event.eventDate}"></small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- adding images and tezxt in cool style -->
+    <div class="continer">
+        <div class="row mt-5" th:each="event : ${events}">
+            <div class="col-md-6 ms-5" >
+                <img th:src="${event.url}" alt="photo of event" height="500px" width="700px">
+            </div>
+            <div class="col-md-6 ms-5">
+                <h1 th:text="${event.eventName}"></h1>
+                <h2 th:text="${event.desc}"></h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in sunt, necessitatibus qui
+                    beatae temporibus a totam tempore nobis atque voluptates nisi quas earum facilis ipsum unde esse
+                    aliquid officiis ducimus reiciendis facere placeat asperiores dolor. Possimus iste asperiores
+                    blanditiis similique, debitis fugiat. Dolorum quae placeat reiciendis accusamus. Ea, quos!</p>
+                <p>Event Date</p>
+                <p th:text="${event.eventDate}"></p>
+            </div>
+
+        </div>
+    </div>
+    <!-- Add Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

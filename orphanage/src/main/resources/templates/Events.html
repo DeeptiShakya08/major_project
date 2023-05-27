@@ -31,8 +31,9 @@
 
         }
 
-        .h1 {
-            margin-top: 10px;
+
+
+        .secHeading {
             font-size: 60px;
             padding: 0 10rem;
             text-align: center;
@@ -44,25 +45,33 @@
             font-family: 'Kaushan Script', cursive;
 
             line-height: 1.4;
-            color:purple;
-            /* color:rgb(5, 160, 5); */
-            padding-left: 0px;
-            padding-right: 0px;
+            color: #4d656c;
         }
 
-        .para {
-            color: #000000;
-            justify-content: center;
-            font-size: 16px;
+        /* .text {
+          font: size 10px;
+          
+          font-weight: 200;
+           font-style: normal; 
+          letter-spacing: 0em;
+          text-transform: none;
+        }
+        .container text{
+          font: size 10px;
+          
+          font-weight: 300;
+          font-style: normal;
+          letter-spacing: 0em;
+          text-transform: none; */
+        /* }  */
+        .h2 {
+            text-decoration: none;
+            color: purple;
+            font-size: 2.5rem;
             font-weight: 400;
-            line-height: 1.5;
-            margin: 10px;
-            padding: 10px;
-            /* background-color: rgb(248, 243, 243); */
-            text-align: center;
 
+            font-display: flex;
         }
-        
     </style>
 </head>
 
@@ -81,11 +90,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-5">
-                        <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
                             Home </a>
                     </li>
                     <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                        <a class="nav-link  " th:href="@{GetEvents}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             View Events</a>
                     </li>
@@ -94,99 +103,82 @@
                             style="color:white">
                             Register and tickets </a>
                     </li>
-                    <li class="nav-item ms-5">
-                        <a class="nav-link  " th:href="@{UpcomingEvents}" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Upcoming events </a>
-                    </li>
-
-
                 </ul>
-                <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form> -->
             </div>
         </div>
     </nav>
     <!--end of navbar-->
 
 
-        <div class="container">
-            <img src="/images/group-children.png" alt="" class="rounded" height="600px" width="100%">
-        </div>
-
-        <div class="container">
-            <h1 class="h1">Welcome to our Events page </h1>
-        </div>
-
-        <div class="container1">
-            <div class="row m-5">
-                <div class="col-md-2"></div>
-             <div class="col-md-8">
-                <p class="para"> At Children's Home , we believe in creating a vibrant and enriching environment for the
-                children under our care. Through a variety of engaging events and activities, we strive to make their journey a memorable and joyous one. Our events are designed to promote their well-being, nurture their talents, and provide opportunities for personal growth.
-                <br><br>
-                we believe in creating a world full of love, laughter, and unforgettable moments for the children we care for.<br> Our events are thoughtfully designed to provide them with opportunities to discover their talents, engage in enriching activities, and foster a sense of belonging. From talent showcases to sports days, cultural festivals to educational workshops, we offer a diverse range of events that inspire growth, ignite imagination, and celebrate the unique qualities of each child. </p>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    
     <div class="container">
-        <div class="row m-5">
-            <div class="col-md-3 mt-5">
-                <img src="/images/art.jpg" >
-            </div>
-
-            <div class="col-md-3 mt-5">
-                <img src="/images/event1.jpg" >
-            </div>
-
-            <div class="col-md-3 mt-5">
-                <img src="/images/event3.jpg" >
-            </div>
-        </div>
-        <div class="row m-5">
-
-            <div class="col-md-3 mt-5">
-                <img src="/images/birthday.jpg" >
-            </div>
-
-            <div class="col-md-3 mt-5">
-                <img src="/images/holiday.jpg" >
-            </div>
-
-            <div class="col-md-3 mt-5">
-                <img src="/images/sportevent.jpg" >
-            </div>
-
-        </div>
+        <img src="/images/event banner.jpg" alt="" class="rounded" height="600px" width="100%">
     </div>
 
-
     <div class="container">
-        <div class="row m-5">
-            <div class="col-md-2"></div>
-           
-         <div class="col-md-8">
-            <p class="para"> 
-            We invite you to explore our upcoming events and discover the wonderful experiences we have planned for our children. <br>Join us in creating cherished memories and making a positive impact in their lives.
-            <br>
-            Join us in creating cherished memories and empowering these incredible young souls.<br> Together, let's make a positive impact and shape a brighter future for our children. Check out our upcoming events below and be a part of something truly special.</p>
-        </div>
-        <div class="col-md-2"></div>
+        <h1 class="h1">Welcome to our Events page </h1>
     </div>
 
-
-    <div class="container">
-        <div class="row" m-5>
+    <div class="container1">
+        <div class="row m-5">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <img src="/images/guest.jpeg" height="400px">
+                <p class="para"> At Children's Home , we believe in creating a vibrant and enriching environment for the
+                    children under our care. Through a variety of engaging events and activities, we strive to make
+                    their journey a memorable and joyous one. Our events are designed to promote their well-being,
+                    nurture their talents, and provide opportunities for personal growth.
+                    <br><br>
+                    we believe in creating a world full of love, laughter, and unforgettable moments for the children we
+                    care for.<br> Our events are thoughtfully designed to provide them with opportunities to discover
+                    their talents, engage in enriching activities, and foster a sense of belonging. From talent
+                    showcases to sports days, cultural festivals to educational workshops, we offer a diverse range of
+                    events that inspire growth, ignite imagination, and celebrate the unique qualities of each child.
+                </p>
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+            <img src="/images/art.jpg" class ="rouned" alt="" height="300px" width="400">
+        </div>
+        <div class="col-md-4 ">
+            <img src="/images/event1.jpg" alt="" class ="rouned" height="300px" width="400">
+        </div>
+        <div class="col-md-4 ">
+            <img src="/images/event3.jpg" alt="" class ="rouned" height="300px" width="400">
+        </div>
+    </div>
+</div>
 
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+                <p class="para">
+                    We invite you to explore our upcoming events and discover the wonderful experiences we have
+                    planned for our children. <br>Join us in creating cherished memories and making a positive
+                    impact in their lives.
+                    <br>
+                    Join us in creating cherished memories and empowering these incredible young souls.<br>
+                    Together, let's make a positive impact and shape a brighter future for our children. Check out
+                    our upcoming events below and be a part of something truly special.
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="row" m-5>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <img src="/images/guest.jpeg" height="400px">
+                </div>
+            </div>
+        </div> 
+</div>
 
 
     <!-- start of footer -->
@@ -275,9 +267,9 @@
 
     <!-- Copyright -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script> -->
 
 
 </body>

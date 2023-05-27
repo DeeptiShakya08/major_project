@@ -24,52 +24,58 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid" style="background-color:purple;">
-      <a class="navbar-brand" href="#">
-        <h2 style="color:white"><img src="//Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
-          The Children's Home</h2>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ms-5">
-            <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white"> Home </a>
-          </li>
-          <li class="nav-item ms-5">
-            <a class="nav-link " href="/Fly high/gallery.html" style="color:white"> Admin </a>
-          </li>
-          <li class="nav-item ms-5">
-            <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true" style="color:white">
-              Donor </a>
-          </li>
-          <li class="nav-item ms-5">
-            <a class="nav-link " href="/Fly high/Register.html" tabindex="-1" aria-disabled="true"
-              style="color:white">Adoptation </a>
-          </li>
-          <li class="nav-item ms-5">
-            <a class="nav-link " href="/Fly high/login.html" tabindex="-1" aria-disabled="true"
-              style="color:white">Signup/Login </a>
-          </li>
-          <li class="nav-item ms-5">
-            <a class="nav-link " href="/Fly high/contact.html" tabindex="-1" aria-disabled="true" style="color:white">
-              Contact us
-            </a>
-          </li>
+  <nav class="navbar navbar-e   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid " style="background-color:purple;">
+        <a class="navbar-brand" href="#">
+            <h2 style="color:white;font-family: 'Kaushan Script', cursive" ;><img
+                    src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
+                Children's Home</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-5 ">
+                    <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+                        Home </a>
+                </li>
+                <li class="nav-item ms-5 ">
+                    <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
+                </li>
 
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form> -->
-      </div>
+                <li class="nav-item ms-5 ">
+                    <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
+                        style="color:white">
+                        Contact us
+                    </a>
+                </li>
+            </ul>
+            <!-- <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success" type="submit">Search</button>
+    </form> -->
+        </div>
     </div>
-  </nav>
+</nav>
  <!-- your code goes here -->
-
+ <br>
+ <br>
+<br>
+    <center>
+        <div class="card m-5" style="width: 18rem;">
+            <img src="/images/success.png" class="card-img-top" alt="..." height="250px">
+            <div class="card-body">
+                <p class="card-text text-success" th:text="${action}"></p>
+                <a th:href="@{index}" class="btn btn-primary">Go Back to Home</a>
+            </div>
+        </div>
+    </center>
+    <br>
+<br>
+<br>
 
 
   <!-- start of footer -->

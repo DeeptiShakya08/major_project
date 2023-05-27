@@ -228,7 +228,7 @@ button {
 
     <section>
         <div class="Donation-box">
-        <form action="">
+        <form th:action="@{Donation}">
             <h2>Donation</h2>
             <div class="input-box">
                 <!-- <span class="icon"><ion-icon name="mail"></ion-icon></span> -->
@@ -243,17 +243,17 @@ button {
             </div>
             <div class="input-box">
                 <!-- <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> -->
-                <input type="textbox"  id="add" name="Address"  required>
-                <label>Address</label>
+                <input type="textbox"  id="add" name="address"  required>
+                <label>address</label>
             </div>
             <div class="input-box">
                 <!-- <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> -->
-                <input type="textbox"id="item" name="Item Name" required>
-                <label>Item name </label>
+                <input type="textbox"id="item" name="ItemName" required>
+                <label>ItemName </label>
             </div>
             <div class="input-box">
                 <!-- <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> -->
-                <input type="textbox" id="amount" name="amount"  required>
+                <input type="number" id="amount" name="amountOrNoOfItems"  required>
                 <label>Amount/Number of item   </label>
             </div>
             <div class="input-box">
@@ -267,13 +267,12 @@ button {
             <div class="para"> 
                 <p>Thank you for your donation!</p>
             </div>
-            
+            <p th:text = "${errorMessage}" style="color: red;"></p>
         </form>
-    </div>
         
+    </div>
 </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
