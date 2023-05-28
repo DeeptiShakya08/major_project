@@ -201,10 +201,10 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid " style="background-color:purple;">
+        <div class="container-fluid" style="background-color:purple;">
             <a class="navbar-brand" href="#">
-                <h2 style="color:white;font-family: 'Kaushan Script', cursive" ;><img
-                        src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
+                <h2 style="color:white"><img src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded"
+                        height="60px">
                     Children's Home</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -214,39 +214,25 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item ms-5 ">
+                    <li class="nav-item ms-5">
                         <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
                             Home </a>
                     </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
-                    </li>
-
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link  " th:href="@{DonationPage}" tabindex="-1" aria-disabled="true"
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " th:href="@{GetChildsForAdoption}" tabindex="-1" aria-disabled="true"
                             style="color:white">
-                            Donation </a>
+                            View children </a>
                     </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdoptionPage}" tabindex="-1" aria-disabled="true"
-                            style="color:white">Adoption </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link  " th:href="@{Events}" tabindex="-1" aria-disabled="true"
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " th:href="@{AdoptionStatus}" tabindex="-1" aria-disabled="true"
                             style="color:white">
-                            Events</a>
+                            View Status </a>
                     </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{login}" tabindex="-1" aria-disabled="true"
-                            style="color:white">Signup/Login </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
+                    <li class="nav-item ms-5">
+                        <a class="nav-link  " th:href="@{index}" tabindex="-1" aria-disabled="true"
                             style="color:white">
-                            Contact us
-                        </a>
+                            Logout </a>
                     </li>
-
                 </ul>
             </div>
         </div>

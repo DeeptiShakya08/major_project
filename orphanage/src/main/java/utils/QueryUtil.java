@@ -20,4 +20,6 @@ public class QueryUtil {
 	public static final String GET_CHILDS_FOR_ADOPTION_QUERY = "select name,dob,hair_colour, gender ,child_pid ,image_url,doj, adation_request from m_orphanage_children where is_adopted = false";
 	public static final String ADD_EVENT_QUERY = "insert into m_orphanage_events ( event_name, event_image_url, volunteer, participants, event_description,event_date) values (?,?,?,?,?,?)";
 	public static final String GET_EVENTS_QUERY = "select event_name,event_image_url,event_description,event_date from m_orphanage_events where event_date <= ?";
+	public static final String ADD_TICKET_QUERY = "insert into t_orphanage_tickets (name, email, eventname, ticket_quantity, pay_method, ticket_id ,ticket_date) values (?,?,?,?,?,?,?)";
+	public static final String GET_TICKET_QUERY = "select name, email, eventname, ticket_quantity, pay_method, ticket_id ,ticket_date from t_orphanage_tickets";
 }

@@ -26,7 +26,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
@@ -42,14 +41,6 @@
             font-size: 20px;
 
         }
-
-        /* body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background:#000;
-} */
         section {
             display: flex;
             justify-content: center;
@@ -61,12 +52,6 @@
             background-position: center;
             /* animation: animateBg 5s linear infinite;  */
         }
-
-        /* @keyframes animateBg {
-    100% {
-        filter: hue-rotate(360deg);
-    }
-} */
 
         .login-box {
             position: relative;
@@ -215,12 +200,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
+                    <li class="nav-item" >
+                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="font-family: 'Kaushan Script', cursive;
+                        font-size: 20px;color:white">
                             Home </a>
                     </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
+                    <li class="nav-item">
+                        <a class="nav-link " th:href="@{AdminLogin}" style="font-family: 'Kaushan Script', cursive;
+                        font-size: 20px;color:white"> About Us </a>
                     </li>
                 </ul>
                 <!-- <form class="d-flex">
@@ -234,32 +221,28 @@
 
     <section>
         <div class="login-box">
-            <form action="">
+            <form th:action="@{ContactUsAdmin}">
                 <h2>Contact Us</h2>
                 <div class="input-box">
 
-                    <input type="text" required>
+                    <input type="text" required name = "name">
                     <label> Name</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" required>
+                    <input type="email" required name = "email">
                     <label> E-mail</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="text" required>
+                    <input type="text" required name = "msg">
                     <label>Message</label>
                 </div>
                 <button type="submit">Submit</button>
-                <div class="register-link">
-                    <p>Thank you for Register! <a href="#"> Login</a></p>
-
-                </div>
             </form>
         </div>
     </section>

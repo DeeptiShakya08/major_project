@@ -2,336 +2,159 @@
 <html lang="en">
 
 <head xmlns:th="http://www.thymeleaf.org">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <title>Orphanage Management System</title>
-    <style>
-        .nav-item {
-            font-family: 'Kaushan Script', cursive;
-            font-size: 20px;
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <title>Orphanage Management System</title>
+  <style>
+    .nav-item {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 20px;
 
-        }
-        
-        .bg{
-        min-height: 80vh;
-        width: 100%;
-        background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("images/threehands.jpg");
-        background-position: center;
-        background-size:cover;
-        position:relative;
-        }
-        .text{
-        width:90%;
-        color:purple;
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform:translate(-50% ,-50%);
-    }
-    .text h1{
-        font-size: 100px;
-        text-align: center;
-        font-family: 'Kaushan Script', cursive;
-        color:purple;
-        font-weight: 800px;
     }
 
-
-
-        .h1 {
-            margin-top: 10px;
-            font-size: 60px;
-            padding: 0 10rem;
-            text-align: center;
-            /* text-decoration: none; */
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 0px;
-            display: block;
-            font-family: 'Kaushan Script', cursive;
-
-            line-height: 1.4;
-            color:purple;
-            /* color:rgb(5, 160, 5); */
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .para {
-            color: #000000;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 10px;
-            padding: 10px;
-            /* background-color: rgb(248, 243, 243); */
-            text-align: center;
-
-        }
-        .para1{
-            background-color: rgb(248, 243, 243);
-    font-size: 18px;
-    
-font-family: 'Source Sans Pro', sans-serif;
-/* font-family: 'Source Serif Pro', serif; */
-    color:black;
-    /* font-weight: normal; */
-    margin-top: 5px;
-    margin-left:10px ;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    box-sizing: border-box;
-    box-shadow:rgb(224, 222, 222);
-        }
-
-.p{
-        font-size: 30px;
-        text-align: center;
-        font-family: 'Kaushan Script', cursive;
-        color:purple;
-        font-weight: 400px;
-        margin: auto;
-        padding-top: 15px;
+    .bg {
+      min-height: 80vh;
+      width: 100%;
+      background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("images/threehands.jpg");
+      background-position: center;
+      background-size: cover;
+      position: relative;
     }
 
-    .calendar {
-  width: 400px;
-  border: 1px solid purple;
-  background-color: #f9f9f9;
-  padding: 10px;
-  position: relative;
+    .text {
+      width: 90%;
+      color: purple;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-table {
-  width: 100%;
-  position: center;
-}
-
-thead th {
-  text-align: center;
-}
-
-tbody td {
-  text-align: center;
-  padding: 5px;
-}
-
-td:not(:empty):hover {
-  background-color: #ddd;
-}
-
-    
-    </style>
+    .text h1 {
+      font-size: 100px;
+      text-align: center;
+      font-family: 'Kaushan Script', cursive;
+      color: purple;
+      font-weight: 800px;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" style="background-color:purple;">
-            <a class="navbar-brand" href="#">
-                <h2 style="color:white"><img src=""alt="" class="rounded" height="60px">
-                    Children's Home</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item ms-5">
-                        <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
-                            Home </a>
-                    </li>
-                    <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Events</a>
-                    </li>
-                    <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Register and tickets </a>
-                    </li>
-                    <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Upcoming Events </a>
-                    </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" style="background-color:purple;">
+      <a class="navbar-brand" href="#">
+        <h2 style="color:white"><img src="" alt="" class="rounded" height="60px">
+          Children's Home</h2>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ms-5">
+            <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+              Home </a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true" style="color:white">
+              Events</a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true" style="color:white">
+              Register and tickets </a>
+          </li>
+          <li class="nav-item ms-5">
+            <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true" style="color:white">
+              Upcoming Events </a>
+          </li>
 
 
-                </ul>
-                <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form> -->
-            </div>
-        </div>
-    </nav>
-    <section class="bg">
-        <div class="text">
-            <!-- <h4>Give them <h4> -->
-            <h1>Our Upcoming Events</h1> 
-            <!-- <h4>when no one else cares</h4> -->
-            <!-- <a href=""class="hero-btn">ADOPT A CHILD</a> -->
-        </div>
-    </section>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="bg">
+    <div class="text">
+      <h1>Our Upcoming Events</h1>
+    </div>
+  </section>
+    <div class="container mt-5">
+      <h4 style="color:purple; font-size: 20px; text-align:center;">Talent Showcase </h4>
+      <p> Witness the incredible talent and creativity of our children as they take the stage to sing,
+        dance, and showcase their artistic skills. Prepare to be amazed by their confidence and passion as they share
+        their unique talents with the world.</p>
+    </div>
 
+    <div class="container ">
+      <h4 style="color:purple; font-size: 20px; text-align:center;">Sports Day </h4>
+      <p> Get ready for an action-packed day of friendly competition and teamwork. Our Sports Day brings
+        together children from different age groups to participate in a range of exciting sports activities. Come cheer
+        them on as they demonstrate their athletic abilities and learn the value of sportsmanship.</p>
+    </div>
     <div class="container">
-        <div class="row m-5">
-            <div class="col-md-4"></div>
-            <div class="col-md-8"> <div class="calendar">
-                <div class="header">
-                  <h2>May 2023</h2>
-                </div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Sun</th>
-                      <th>Mon</th>
-                      <th>Tue</th>
-                      <th>Wed</th>
-                      <th>Thu</th>
-                      <th>Fri</th>
-                      <th>Sat</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>3</td>
-                      <td>4</td>
-                      <td>5</td>
-                      <td>6</td>
-                      <td>7</td>
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td>9</td>
-                      <td>10</td>
-                      <td>11</td>
-                      <td>12</td>
-                      <td>13</td>
-                      <td>14</td>
-                    </tr>
-                    <tr>
-                      <td>15</td>
-                      <td>16</td>
-                      <td>16</td>
-                      <td>18</td>
-                      <td>19</td>
-                      <td>20</td>
-                      <td>21</td>
-                    </tr>
-                    <tr>
-                      <td>22</td>
-                      <td>23</td>
-                      <td>24</td>
-                      <td>25</td>
-                      <td>26</td>
-                      <td>26</td>
-                      <td>28</td>
-                    </tr>
-                    <tr>
-                      <td>29</td>
-                      <td>30</td>
-                      <td>31</td>
-                    </tr>
-                    <!-- Continue the pattern for other weeks -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-   
-
-
-
-    <section >
-    <div class="container m-5">
-    <h4 style="color:purple; font-size: 20px; text-align:center;">Talent Showcase </h4>
-    
-    <p class="para">Witness the incredible talent and creativity of our children as they take the stage to sing, dance, and showcase their artistic skills. Prepare to be amazed by their confidence and passion as they share their unique talents with the world.</p>
+      <h4 style="color:purple; font-size: 20px; text-align:center;">Outdoor Adventure </h4>
+      <p >Embark on a thrilling outdoor adventure with our children. From nature hikes to picnics, our
+        outdoor activities allow them to explore and connect with the beauty of the natural world. Join us as we create
+        lasting memories in an environment of fun and adventure.</p>
     </div>
 
-    <div class="container  m-5">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Sports Day </h4>
-<p class="para">Get ready for an action-packed day of friendly competition and teamwork. Our Sports Day brings together children from different age groups to participate in a range of exciting sports activities. Come cheer them on as they demonstrate their athletic abilities and learn the value of sportsmanship.</p>
-</div>
-<div class="container m-5">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Arts and Crafts Fair </h4>
-<p class="para">Be captivated by the artistic expressions of our children at our annual Arts and Crafts Fair. Explore a wide array of handmade creations including paintings, sculptures, pottery, and more. Each purchase made directly supports the children's education and development.</p>
-</div>
-<div class="container m-5">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Cultural Festival </h4>
-<p class="para">Experience the richness and diversity of cultures at our Cultural Festival. Immerse yourself in an atmosphere filled with traditional music, dance, and authentic cuisine. Through this celebration, we encourage our children to appreciate different cultures and foster a sense of unity and respect.</p>
-</div>
-<div class="container">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Career Day - Date: [Date]</h4>
-<p class="para">Inspire our children by sharing your professional journey at our Career Day event. As guest speakers from various fields, you have the opportunity to ignite their imaginations and instill a sense of ambition. Help them envision a world of possibilities and encourage them to pursue their dreams.</p>
-</div>
-<div class="container m-5">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Educational Workshop </h4>
-<p class="para">Join us for an interactive and educational workshop designed to broaden the horizons of our children. Engage with them in hands-on activities and enlighten them about the wonders of science, art, music, or cooking. Through these workshops, we aim to foster a love for learning and encourage their curiosity.</p>
-</div>
-<div class="container m-5">
-<h4 style="color:purple; font-size: 20px; text-align:center;">Outdoor Adventure </h4>
-<p class="para">Embark on a thrilling outdoor adventure with our children. From nature hikes to picnics, our outdoor activities allow them to explore and connect with the beauty of the natural world. Join us as we create lasting memories in an environment of fun and adventure.</p>
-</div>
-</section>
 
+  <div class="container mt-5">
+    <p >We extend a warm invitation to all members of our community to join us in these events and contribute
+      to the happiness and well-being of our children. Your support and participation make a significant difference in
+      their lives, empowering them to thrive and reach their full potential.</p>
+  </div>
+  <h1 style="font-size: 20px; text-align:center;margin-top: 15px;"> Our Upcoming Events Are Here</h1>
+  <div class="continer">
+    <div class="row mt-5" th:each="event : ${events}">
+      <div class="col-md-6 ms-5">
+        <img th:src="${event.url}" alt="photo of event" height="500px" width="700px">
+      </div>
+      <div class="col-md-6 ms-5">
+        <h1 th:text="${event.eventName}"></h1>
+        <h2 th:text="${event.desc}"></h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo in sunt, necessitatibus qui
+          beatae temporibus a totam tempore nobis atque voluptates nisi quas earum facilis ipsum unde esse
+          aliquid officiis ducimus reiciendis facere placeat asperiores dolor. Possimus iste asperiores
+          blanditiis similique, debitis fugiat. Dolorum quae placeat reiciendis accusamus. Ea, quos!</p>
+        <p>Event Date</p>
+        <p th:text="${event.eventDate}"></p>
+      </div>
 
+    </div>
+  </div>
+  <div class="container">
+    <img src="/images/OrphanHeaderPhoto.Jpg" alt="orphanheader" width="800px">
+  </div>
+  <div class="container">
+    <p style="font-size: 20px; color:black; background-color:rgb(249, 246, 246); text-align: center;">Stay tuned for
+      updates and additional events throughout the year. Together, let's create a brighter future for our children<br>
+      For more information and event details, please contact us</p>
+  </div>
 
-
-
-<div class="container m-5">
-<p class="p">We extend a warm invitation to all members of our community to join us in these events and contribute to the happiness and well-being of our children. Your support and participation make a significant difference in their lives, empowering them to thrive and reach their full potential.</p>
-</div>
-<div class="container">
-    <img src="/images/OrphanHeaderPhoto.Jpg" alt="orphanheader" width="800px"> 
-</div>
-
-
-<div class="container">
-    <p style="font-size: 20px; color:black; background-color:rgb(249, 246, 246); text-align: center;">Stay tuned for updates and additional events throughout the year. Together, let's create a brighter future for our children<br>
-    For more information and event details, please contact us</p>
-    
-</div>
-
-
-  
-
-
-<!-- footer  -->
-<div id="wrapper">
+  <!-- footer  -->
+  <div id="wrapper">
     <footer class="text-center text-white mt-3" id="Footer" style="background-color:purple;">
       <!-- Grid container -->
       <div class="container p-4">
@@ -343,16 +166,15 @@ td:not(:empty):hover {
             role="button"><i class="bi bi-facebook"></i></a>
 
           <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-              class="bi bi-twitter"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-twitter"></i></a>
 
           <!-- Google -->
           <a class="btn btn-outline-light btn-floating m-1" href="bilalsaifi24977@gmail.com" role="button"><i
               class="bi bi-google"></i></a>
 
           <!-- Instagram -->
-          <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com/saifi4085"
-            role="button"><i class="bi bi-instagram"></i></a>
+          <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com/saifi4085" role="button"><i
+              class="bi bi-instagram"></i></a>
 
           <!-- Linkedin -->
           <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/bilal-saifi-a4365a252"
@@ -398,32 +220,10 @@ td:not(:empty):hover {
         </section>
         <!-- Section: Form -->
       </div>
-
       <!-- Grid container -->
-
       <!-- Copyright -->
     </footer>
   </div>
-
-  <!-- Copyright -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -39,7 +39,6 @@
         .nav-item {
             font-family: 'Kaushan Script', cursive;
             font-size: 20px;
-
         }
 
         /* body{
@@ -215,23 +214,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-5 ">
-                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
+                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white;font-family: 'Kaushan Script', cursive; font-size: 20px;">
                             Home </a>
                     </li>
                     <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
+                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white;font-family: 'Kaushan Script', cursive; font-size: 20px;"> About Us </a>
                     </li>
                     <li class="nav-item ms-5 ">
+                        <a class="nav-link  " th:href="@{Events}" tabindex="-1" aria-disabled="true"
+                            style="color:white;font-family: 'Kaushan Script', cursive; font-size: 20px;">
+                            Events</a>
+                    </li>
+
+                    <li class="nav-item ms-5 ">
                         <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
-                            style="color:white">
+                            style="color:white;font-family: 'Kaushan Script', cursive; font-size: 20px;">
                             Contact us
                         </a>
                     </li>
+
                 </ul>
-                <!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form> -->
             </div>
         </div>
     </nav>
@@ -271,7 +273,6 @@
                     <input type="confirm password" required name="cPassword">
                     <label> Confirm Password</label>
                 </div>
-
                 <button type="submit">Submit</button>
                 <div class="register-link">
                     <p>Thank you for Register! <a th:href="@{AdoptorLogin}"> Login</a></p>

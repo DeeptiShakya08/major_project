@@ -16,6 +16,7 @@
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/starter/OrphanAgeController.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/childcrud/AddChildBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/events/EventService.java
+/home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/ticket/TicketReqBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/adaption/AdoptionReqBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/register/RegisterBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/utils/CloseResources.java
@@ -23,6 +24,7 @@
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/register/UserDetailBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/childcrud/ChildCRUDDao.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/utils/QueryUtil.java
+/home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/ticket/TicketDao.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/adaption/AdoptionResBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/donation/DonationItemBean.java
 /home/bilal/NewCollegeProject/major_project/orphanage/src/main/java/adaption/AdaptionDao.java
