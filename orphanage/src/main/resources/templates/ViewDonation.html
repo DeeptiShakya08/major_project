@@ -125,42 +125,34 @@ and a padding-bottom equal to the height of the footer */
             /* Change this value to match the height of your footer */
         }
     </style>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid " style="background-color:purple;">
-            <a class="navbar-brand" href="#">
-                <h2 style="color:white;font-family: 'Kaushan Script', cursive" ;><img
-                        src="/Fly high/Fly_high-removebg-preview.png" alt="" class="rounded" height="60px">
-                    Children's Home</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
-                            Home </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Contact us
-                        </a>
-                    </li>
-
-                </ul>
-                <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form> -->
+    	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid" style="background-color: purple;">
+                <a class="navbar-brand" href="#">
+                    <h2 style="color: white">
+                        <img src="/images/logo.png" alt="" width="150px" class="rounded" height="60px"> Children's Home
+                    </h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5"><a class="nav-link active " aria-current="page" th:href="@{index}"
+                                style="color: white"> Home </a></li>
+    
+                        <li class="nav-item ms-5"><a class="nav-link  " th:href="@{DonationForm}" tabindex="-1"
+                                aria-disabled="true" style="color: white"> Donate </a></li>
+                        <li class="nav-item ms-5"><a class="nav-link " th:href="@{index}" tabindex="-1" aria-disabled="true"
+                                style="color: white">Logout </a></li>
+                        <li class="nav-item ms-5"><a class="nav-link " th:href="@{ContactUs}" tabindex="-1"
+                                aria-disabled="true" style="color: white"> Contact us </a></li>
+                    </ul>
+    
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     <!--end of navbar-->
     <!-- Displaying child details -->
     <center>

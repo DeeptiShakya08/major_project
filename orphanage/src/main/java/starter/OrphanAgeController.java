@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import org.hibernate.validator.constraints.pl.REGON;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +29,10 @@ import events.EventsDao;
 import register.RegisterBean;
 import register.RegisterDao;
 import register.UserDetailBean;
+import ticket.TicketDao;
+import ticket.TicketReqBean;
 import utils.CacheUtil;
+import utils.MailSender;
 
 @Controller
 public class OrphanAgeController {
@@ -92,7 +94,7 @@ public class OrphanAgeController {
 
 	@RequestMapping("RegisterTicket")
 	public String registerTicket() {
-		return "RegisterandTickets";
+		return "TicketRegister";
 	}
 
 	@RequestMapping("/RegisterChild")
@@ -304,60 +306,109 @@ public class OrphanAgeController {
 	public String aboutUs() {
 		return "AboutUs";
 	}
-//	@PostMapping("/GetImage")
-//	static String saveImage(MultipartFile image) {
-//		System.out.println("image name = "+image.getOriginalFilename().toString());
-//        String folder = "src/main/resources/static/images";
-//        try {
-//            byte[] bytes = image.getBytes();
-//            Path directoryPath = Paths.get(folder);
-//            if (!Files.exists(directoryPath)) {
-//                Files.createDirectories(directoryPath);
-//            }
-//            Path filePath = directoryPath.resolve(image.getOriginalFilename());
-//            Files.write(filePath, bytes);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return "success";
-//    }
+
 	@PostMapping("/GetImage")
-	static String saveImage(@RequestParam("image")MultipartFile image,@RequestParam("name")String name) {
-		System.out.println("name = "+name);
-		System.out.println("image name = "+image.getOriginalFilename().toString());
-        String folder = "src/main/resources/static/images";
-        try {
-            byte[] bytes = image.getBytes();
-            Path directoryPath = Paths.get(folder);
-            if (!Files.exists(directoryPath)) {
-                Files.createDirectories(directoryPath);
-            }
-            Path filePath = directoryPath.resolve(image.getOriginalFilename());
-            Files.write(filePath, bytes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "success";
-    }
-	@RequestMapping("AddEvent")
-	public String addEvent(EventBean event,Model model) {
-		EventService.processEvent(event);
-		System.out.println("processing event");
-		model.addAttribute("action","Event addedd successfully");
+	static String saveImage(@RequestParam("image") MultipartFile image, @RequestParam("name") String name) {
+		System.out.println("name = " + name);
+		System.out.println("image name = " + image.getOriginalFilename().toString());
+		String folder = "src/main/resources/static/images";
+		try {
+			byte[] bytes = image.getBytes();
+			Path directoryPath = Paths.get(folder);
+			if (!Files.exists(directoryPath)) {
+				Files.createDirectories(directoryPath);
+			}
+			Path filePath = directoryPath.resolve(image.getOriginalFilename());
+			Files.write(filePath, bytes);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "success";
 	}
+
+	@RequestMapping("AddEvent")
+	public String addEvent(EventBean event, Model model) {
+		EventService.processEvent(event);
+		System.out.println("processing event");
+		model.addAttribute("action", "Event addedd successfully");
+		return "success";
+	}
+
 	@RequestMapping("EventForm")
 	public String eventForm() {
 		return "AddEvent";
 	}
+
 	@RequestMapping("GetEvents")
 	public String getEvents(Model model) {
 		System.out.println("getting events");
 		List<EventBean> events = EventsDao.getAllEvents();
-		for(EventBean bean:events) {
+		for (EventBean bean : events) {
 			System.out.println(bean.toString());
 		}
-		model.addAttribute("events",events);
+		model.addAttribute("events", events);
 		return "ViewEvent";
+	}
+
+	@RequestMapping("BookTicket")
+	public String bookTicket(TicketReqBean ticket, Model model) {
+		String ticketNo = TicketDao.bookTiket(ticket);
+		model.addAttribute("action", "Ticket booked successfully with ticket no" + ticketNo);
+		return "success";
+	}
+
+	@RequestMapping("GetTicket")
+	public String getTickets(Model model) {
+		List<TicketReqBean> tickets = TicketDao.getTickets();
+		if (tickets.size() == 0) {
+			model.addAttribute("errorMessage", "Nothing to show");
+			return "ViewTickets";
+		}
+		model.addAttribute("data", tickets);
+		return "ViewTickets";
+	}
+
+	@RequestMapping("VolunteerPage")
+	public String volunteerPage() {
+		return "VolunteerPage";
+	}
+
+	@RequestMapping("VolunteerLoginForm")
+	public String volunteerForm() {
+		return "VolunteerLogin";
+	}
+
+	@RequestMapping("VolunteerRegisterForm")
+	public String volunteerRegisterForm() {
+		return "VolunteerRegister";
+	}
+
+	@RequestMapping("VolunteerAuth")
+	public String volunteerAuth(String email, String password) {
+		RegisterDao.authUser(email, password, "Volunteer");
+		return "VolunteerPage";
+	}
+
+	@RequestMapping("VolunteerRegistration")
+	public String volunteerRegister(RegisterBean volunteer, Model model) {
+		RegisterDao.registerUser(volunteer, "Volunteer");
+		model.addAttribute("action", "Volunteer Registered Successfulyy");
+		return "success";
+	}
+
+	@RequestMapping("ContactUsAdmin")
+	public String contactData(@RequestParam("name") String name, @RequestParam("email") String email,
+			@RequestParam("msg") String msg, Model model) {
+		MailSender.sendMail("Contact from " + name, msg, "deepshakya609@gmail.com");
+		model.addAttribute("action", "Contacted sucessfully");
+		return "success";
+	}
+
+	@RequestMapping("ViewVolunteer")
+	public String viewVolunteer(Model model) {
+		List<UserDetailBean> data = RegisterDao.getUserDetail("Volunteer");
+		model.addAttribute("user", "Volunteer details");
+		model.addAttribute("data", data);
+		return "UserDetails";
 	}
 }

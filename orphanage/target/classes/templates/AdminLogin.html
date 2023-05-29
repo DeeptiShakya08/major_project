@@ -28,26 +28,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
-        /* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-} */
         .nav-item {
             font-family: 'Kaushan Script', cursive;
             font-size: 20px;
 
         }
-
-        /* body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background:#000;
-} */
         section {
             display: flex;
             justify-content: center;
@@ -57,14 +42,7 @@
             background: url("/images/transparentheart.png") no-repeat;
             background-size: cover;
             background-position: center;
-            /* animation: animateBg 5s linear infinite;  */
         }
-
-        /* @keyframes animateBg {
-    100% {
-        filter: hue-rotate(360deg);
-    }
-} */
 
         .login-box {
             position: relative;
@@ -216,38 +194,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-5 ">
-                        <a class="nav-link active " aria-current="page" href="/Fly high/Home.html" style="color:white">
+                        <a class="nav-link active " aria-current="page" th:href="@{index}" style="color:white">
                             Home </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdminLogin}" style="color:white"> About Us </a>
-                    </li>
-
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link  " th:href="@{DonationPage}" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Donation </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{AdoptionPage}" tabindex="-1" aria-disabled="true"
-                            style="color:white">Adoption </a>
                     </li>
                     <li class="nav-item ms-5 ">
                         <a class="nav-link  " th:href="@{Events}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             Events</a>
                     </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{login}" tabindex="-1" aria-disabled="true"
-                            style="color:white">Signup/Login </a>
-                    </li>
-                    <li class="nav-item ms-5 ">
-                        <a class="nav-link " th:href="@{ContactUs}" tabindex="-1" aria-disabled="true"
-                            style="color:white">
-                            Contact us
-                        </a>
-                    </li>
-
                 </ul>
                 <!-- <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

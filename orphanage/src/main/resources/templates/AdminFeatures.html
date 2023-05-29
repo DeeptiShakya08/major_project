@@ -100,7 +100,7 @@
                             View Request </a>
                     </li>
                     <li class="nav-item ms-5">
-                        <a class="nav-link  " href="/Fly high/aboutus.html" tabindex="-1" aria-disabled="true"
+                        <a class="nav-link  " th:href="@{ViewVolunteer}" tabindex="-1" aria-disabled="true"
                             style="color:white">
                             View volunteer </a>
                     </li>
@@ -115,7 +115,7 @@
                             <div id="text">Report</div>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" th:href="@{AdminLogin}">View Event Details</a></li>
+                            <li><a class="dropdown-item" th:href="@{GetTicket}">View Event Tickets</a></li>
                             <li><a class="dropdown-item" th:href="@{GetAdoptedChild}">View Atopted childs</a></li>
                             <li><a class="dropdown-item" th:href="@{GetAdoptors}">View Adopters Details</a></li>
                             <li><a class="dropdown-item" th:href="@{GetDonors}">View Donor Details</a></li>
